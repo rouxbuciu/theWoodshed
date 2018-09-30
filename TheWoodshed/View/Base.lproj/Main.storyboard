@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FG3-we-zhI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,19 +9,176 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MenuVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TheWoodshed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuVC" customModule="TheWoodshed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knl-Vm-ZJm">
+                                <rect key="frame" x="40" y="244" width="289" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
+                                <state key="normal" title="BEGIN PRACTICE"/>
+                                <connections>
+                                    <segue destination="gWO-Iv-U8Z" kind="showDetail" id="XaL-3l-2Wc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPA-f6-wFG">
+                                <rect key="frame" x="40" y="282" width="124" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
+                                <state key="normal" title="ABOUT"/>
+                                <connections>
+                                    <segue destination="WoI-VQ-qaX" kind="showDetail" id="AOa-Fx-GNu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ce-qx-nIs">
+                                <rect key="frame" x="40" y="320" width="173" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
+                                <state key="normal" title="SETTINGS"/>
+                                <connections>
+                                    <segue destination="dr1-Gi-sQ6" kind="showDetail" id="brB-Td-Q2a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTG-5o-tbq">
+                                <rect key="frame" x="40" y="358" width="167" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
+                                <state key="normal" title="SUPPORT"/>
+                                <connections>
+                                    <segue destination="ClP-Ns-D2W" kind="showDetail" id="QeU-as-y23"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kPA-f6-wFG" firstAttribute="leading" secondItem="Knl-Vm-ZJm" secondAttribute="leading" id="DhN-ud-hBM"/>
+                            <constraint firstItem="2Ce-qx-nIs" firstAttribute="top" secondItem="kPA-f6-wFG" secondAttribute="bottom" constant="10" id="HWR-j2-axl"/>
+                            <constraint firstItem="kPA-f6-wFG" firstAttribute="top" secondItem="Knl-Vm-ZJm" secondAttribute="bottom" constant="10" id="SDo-ih-Psw"/>
+                            <constraint firstItem="2Ce-qx-nIs" firstAttribute="leading" secondItem="kPA-f6-wFG" secondAttribute="leading" id="TrK-ef-gfr"/>
+                            <constraint firstItem="XTG-5o-tbq" firstAttribute="leading" secondItem="2Ce-qx-nIs" secondAttribute="leading" id="Xe5-HO-xmC"/>
+                            <constraint firstItem="Knl-Vm-ZJm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="hmc-gB-wFU"/>
+                            <constraint firstItem="XTG-5o-tbq" firstAttribute="top" secondItem="2Ce-qx-nIs" secondAttribute="bottom" constant="10" id="kyp-Ly-dlf"/>
+                            <constraint firstItem="Knl-Vm-ZJm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ugd-4k-mUw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bUq-L8-l8M"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="XTG-5o-tbq" id="zqV-9H-IUs"/>
+                        <outlet property="helpButton" destination="kPA-f6-wFG" id="hUn-9g-KAi"/>
+                        <outlet property="practiceButton" destination="Knl-Vm-ZJm" id="K77-TJ-XSF"/>
+                        <outlet property="settingsButton" destination="2Ce-qx-nIs" id="0Wp-Rk-6F8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1079.2" y="132.68365817091455"/>
+        </scene>
+        <!--PracticeVC-->
+        <scene sceneID="RrK-dW-HUw">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="gWO-Iv-U8Z" customClass="PracticeVC" customModule="TheWoodshed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iA8-gq-lOU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Sy2-dh-v5x"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qg-GL-OZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391" y="951"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="NQd-0q-nte">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="ClP-Ns-D2W" customClass="AboutVC" customModule="TheWoodshed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKK-OC-Kt2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBh-ON-qkT">
+                                <rect key="frame" x="10" y="30" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="J3c-bk-qhZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="qH5-9v-7bv"/>
+                                </constraints>
+                                <state key="normal" image="left-arrow"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="ClP-Ns-D2W" eventType="touchUpInside" id="Xub-6e-jMq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YBh-ON-qkT" firstAttribute="leading" secondItem="WmK-42-aeL" secondAttribute="leading" constant="10" id="RMd-2t-A30"/>
+                            <constraint firstItem="YBh-ON-qkT" firstAttribute="top" secondItem="WmK-42-aeL" secondAttribute="top" constant="10" id="lE7-ME-30L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WmK-42-aeL"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="YBh-ON-qkT" id="r9B-7T-gsa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWO-o8-gve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2621.5999999999999" y="949.47526236881572"/>
+        </scene>
+        <!--HelpVC-->
+        <scene sceneID="XY8-xO-l1Y">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="WoI-VQ-qaX" customClass="HelpVC" customModule="TheWoodshed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="55d-wr-Dd9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RwD-jC-i6j"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMh-5P-qAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="1158"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="Zdh-zV-Lsn">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="dr1-Gi-sQ6" customClass="SettingsVC" customModule="TheWoodshed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4fW-nE-wK6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aQ7-OU-eeW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6B-Ga-9QN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="1157"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yhf-sG-vVU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FG3-we-zhI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="16y-IP-Ijb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="izh-WI-RRp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89r-96-2Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="-233"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="left-arrow" width="409.60000610351562" height="409.60000610351562"/>
+    </resources>
 </document>

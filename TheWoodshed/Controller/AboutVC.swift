@@ -10,13 +10,23 @@ import UIKit
 
 class AboutVC: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.FlatColor.Smoke.light
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

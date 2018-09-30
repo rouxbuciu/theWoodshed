@@ -18,13 +18,9 @@ class MenuVC: UIViewController {
     
     // MARK: - Variables
     
-    let colourOptions = [AppColours.darkGreen,
-                         AppColours.darkBlue,
-                         AppColours.darkPurple,
-                         AppColours.darkOrange,
-                         AppColours.darkGrey]
+    let colourOptions: [AppColourFamily] = [.green, .blue, .purple, .orange, .red, .teal, .yellow]
     
-    var availableColours: [UIColor]!
+    var availableColours: [AppColourFamily]!
     var buttons: [UIButton]!
     
     // MARK: - View Lifecycle
@@ -34,6 +30,7 @@ class MenuVC: UIViewController {
         
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.view.backgroundColor = UIColor.FlatColor.Smoke.light
         buttons = [practiceButton, helpButton, settingsButton, aboutButton]
     }
     
@@ -46,16 +43,20 @@ class MenuVC: UIViewController {
     // MARK: - Helper functions
     
     private func randomizeColourScheme() {
-        availableColours = colourOptions
+        resetColourOptions()
         for element in buttons {
-            let newColour = selectRandomAvailableColour()
-            element.setTitleColor(newColour, for: .normal)
+            let newColour: AppColourFamily = selectRandomAvailableColour()
+            element.setupWithColourFamily(newColour)
         }
-        self.view.backgroundColor = availableColours[0]
     }
     
-    private func selectRandomAvailableColour() -> UIColor {
-        let randomIndex = Int.random(in: 0...4)
+    private func resetColourOptions() {
+        availableColours = nil
+        availableColours = colourOptions
+    }
+    
+    private func selectRandomAvailableColour() -> AppColourFamily {
+        let randomIndex = Int.random(in: 0..<availableColours.count)
         let randomColour = availableColours[randomIndex]
         
         availableColours.remove(at: randomIndex)
