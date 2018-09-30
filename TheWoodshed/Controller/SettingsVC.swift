@@ -10,12 +10,23 @@ import UIKit
 
 class SettingsVC: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.FlatColor.Smoke.light
+
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        titleLabel.setupWithColourFamily(selectRandomAvailableColour())
+    }
 
     /*
     // MARK: - Navigation

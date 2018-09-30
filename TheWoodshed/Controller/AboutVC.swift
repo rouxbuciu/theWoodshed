@@ -11,6 +11,7 @@ import UIKit
 class AboutVC: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,8 @@ class AboutVC: UIViewController {
         self.view.backgroundColor = UIColor.FlatColor.Smoke.light
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        titleLabel.setupWithColourFamily(selectRandomAvailableColour())
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

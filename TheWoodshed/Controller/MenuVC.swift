@@ -18,9 +18,7 @@ class MenuVC: UIViewController {
     
     // MARK: - Variables
     
-    let colourOptions: [AppColourFamily] = [.green, .blue, .purple, .orange, .red, .teal, .yellow]
-    
-    var availableColours: [AppColourFamily]!
+    var unavailableColours: [AppColourFamily]!
     var buttons: [UIButton]!
     
     // MARK: - View Lifecycle
@@ -32,6 +30,7 @@ class MenuVC: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.view.backgroundColor = UIColor.FlatColor.Smoke.light
         buttons = [practiceButton, helpButton, settingsButton, aboutButton]
+        unavailableColours = []
     }
     
     
@@ -43,26 +42,14 @@ class MenuVC: UIViewController {
     // MARK: - Helper functions
     
     private func randomizeColourScheme() {
-        resetColourOptions()
+        unavailableColours.removeAll()
         for element in buttons {
-            let newColour: AppColourFamily = selectRandomAvailableColour()
+            let newColour: AppColourFamily = selectRandomAvailableColour(unavailableColours)
+            unavailableColours.append(newColour)
             element.setupWithColourFamily(newColour)
         }
     }
-    
-    private func resetColourOptions() {
-        availableColours = nil
-        availableColours = colourOptions
-    }
-    
-    private func selectRandomAvailableColour() -> AppColourFamily {
-        let randomIndex = Int.random(in: 0..<availableColours.count)
-        let randomColour = availableColours[randomIndex]
-        
-        availableColours.remove(at: randomIndex)
-        
-        return randomColour
-    }
+
     
     /*
      // MARK: - Navigation

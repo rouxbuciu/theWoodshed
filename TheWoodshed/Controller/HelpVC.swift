@@ -10,11 +10,32 @@ import UIKit
 
 class HelpVC: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.FlatColor.Smoke.light
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        titleLabel.setupWithColourFamily(selectRandomAvailableColour())
+    }
+    
+    
+    // MARK: - Button functionality
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Helper functions
     
 
     /*
